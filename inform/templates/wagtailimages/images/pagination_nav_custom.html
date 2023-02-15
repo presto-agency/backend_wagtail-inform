@@ -1,0 +1,100 @@
+{% load i18n %}
+{% load wagtailadmin_tags %}
+
+{% comment %}
+    Expects a 'linkurl' parameter to use as the base URL, which may be a URL route name (must be
+    reverse-resolvable with no arguments) or a direct URL path. If omitted, links will be given
+    an href of the form "?p=123", implicitly preserving the current URL path.
+{% endcomment %}
+{% resolve_url linkurl as url_path %}
+
+<style>
+    .pagination-custom ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-custom ul li{
+    margin: 0 10px;
+    line-height: 20px!important;
+}
+
+.current{
+    border: 3px #007d7e solid;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+}
+
+</style>
+{% if items.paginator.num_pages >= 2%}
+<nav class="pagination-custom" aria-label="{% trans 'Pagination' %}">
+  
+
+        <ul>
+            <li>
+                {% if items.has_previous %}
+                    <a href="{{ url_path }}{% querystring p=items.previous_page_number %}">
+                        {% icon name="arrow-left" class_name="default" %}
+                        {% trans 'Previous' %}
+                    </a>
+                {% endif %}
+            </li>
+            
+            {% if items.number|add:-3 > 0 %}
+                <li>
+                    <a href="{{ url_path }}{% querystring p=items.number|add:-3%}">
+                    {{ items.number|add:-3}}</a>
+                </li>
+            {% endif %}
+
+            {% if items.number|add:-2 > 0 %}
+                <li>
+                    <a href="{{ url_path }}{% querystring p=items.number|add:-2%}">
+                    {{ items.number|add:-2}}</a>
+                </li>
+            {% endif %}
+            
+            {% if items.number|add:-1 > 0 %}
+                <li>
+                    <a href="{{ url_path }}{% querystring p=items.number|add:-1%}">
+                    {{ items.number|add:-1}}</a>
+                </li>
+            {% endif %}
+                   
+
+            <li class="current"><a>{{items.number}}</a></li>
+
+            {% if items.number|add:1 < items.paginator.num_pages %}
+                <li>
+                    <a href="{{ url_path }}{% querystring p=items.number|add:1%}">
+                    {{ items.number|add:1}}</a>
+                </li>
+            {% endif %}  
+
+            {% if items.number|add:2 < items.paginator.num_pages %}
+                <li>
+                    <a href="{{ url_path }}{% querystring p=items.number|add:2%}">
+                    {{ items.number|add:2}}</a>
+                </li>
+            {% endif %}
+
+            {% if items.number|add:3 < items.paginator.num_pages %}
+                <li>
+                    <a href="{{ url_path }}{% querystring p=items.number|add:3%}">
+                    {{ items.number|add:3}}</a>
+                </li>
+            {% endif %}
+
+            <li>
+                {% if items.has_next %}
+                    <a href="{{ url_path }}{% querystring p=items.next_page_number %}">
+                        {% trans 'Next' %}
+                        {% icon name="arrow-right" class_name="default" %}
+                    </a>
+                {% endif %}
+            </li>     
+        </ul>
+</nav>
+{% endif %}
