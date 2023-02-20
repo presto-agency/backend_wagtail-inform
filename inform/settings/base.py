@@ -7,7 +7,7 @@ VERSION = "2.0.122"
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-SECRET_KEY = "django-insecure-+_@f-8v5nsz3gnwuh!m00&#x7m_yw913x@ob9wq)rpp!6!0s!)"
+SECRET_KEY = "django-insecure-+_@f-8v5nsz3gnwuh!m00&#x7m_yw913x@ob9wq)rpp!6!0s!0"
 
 INSTALLED_APPS = [
     "home",
@@ -224,3 +224,4 @@ CORS_ALLOWED_ORIGINS = ["http://localhost"]
 
 WAGTAILIMAGES_INDEX_PAGE_SIZE = 18
 WAGTAIL_FILE_NAME_MAX_LENGTH = 255
+ALLOWED_HOSTS = ['*']
