@@ -7,7 +7,7 @@
 *.sqlite3.gz
 *.tar.gz
 .vscode
-/media
+
 .envrc
 
 # Byte-compiled / optimized / DLL files
@@ -70,7 +70,6 @@ cover/
 # Django stuff:
 *.log
 local_settings.py
-*.sqlite3
 *.sqlite3-journal
 
 # Flask stuff:

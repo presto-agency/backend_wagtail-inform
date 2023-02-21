@@ -21,7 +21,6 @@ class Migration(migrations.Migration):
     dependencies = [
         ('wagtailimages', '0023_add_choose_permissions'),
         ('wagtailcore', '0066_collection_management_permissions'),
-        ('wagtail_feeds', '0008_alter_rssfeedssettings_id'),
     ]
 
     operations = [

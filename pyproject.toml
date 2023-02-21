@@ -38,6 +38,7 @@ anyio = "^3.5.0"
 httpx = "^0.22.0"
 wagtail-orderable = "^1.1.0"
 requests-aws4auth = "^1.1.2"
+dj-database-url = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
 ipython = ">=8.3.0"
