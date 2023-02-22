@@ -807,22 +807,22 @@ six = ">=1.12"
 
 [[package]]
 name = "gunicorn"
-version = "20.0.4"
+version = "20.1.0"
 description = "WSGI HTTP Server for UNIX"
 category = "main"
-optional = true
-python-versions = ">=3.4"
+optional = false
+python-versions = ">=3.5"
 files = [
-    {file = "gunicorn-20.0.4-py2.py3-none-any.whl", hash = "sha256:cd4a810dd51bf497552cf3f863b575dabd73d6ad6a91075b65936b151cbf4f9c"},
-    {file = "gunicorn-20.0.4.tar.gz", hash = "sha256:1904bb2b8a43658807108d59c3f3d56c2b6121a701161de0ddf9ad140073c626"},
+    {file = "gunicorn-20.1.0-py3-none-any.whl", hash = "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e"},
+    {file = "gunicorn-20.1.0.tar.gz", hash = "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"},
 ]
 
 [package.dependencies]
 setuptools = ">=3.0"
 
 [package.extras]
-eventlet = ["eventlet (>=0.9.7)"]
-gevent = ["gevent (>=0.13)"]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
 setproctitle = ["setproctitle"]
 tornado = ["tornado (>=0.2)"]
 
@@ -2367,9 +2367,9 @@ files = [
 ]
 
 [extras]
-prod = ["cryptography", "gunicorn", "psycopg2", "sentry-sdk"]
+prod = ["cryptography", "psycopg2", "sentry-sdk"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "367532a03397186cbd1f26229657a8f9ddc95c365b5acf74c7c99b98bbb22e10"
+content-hash = "115066064aa2439c440687cb1ea5020117e80b5b22f6eb5ac4aa026f4409eac0"

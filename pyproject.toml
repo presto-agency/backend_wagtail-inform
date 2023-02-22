@@ -17,7 +17,6 @@ django-storages = "^1.12.3"
 boto3 = "^1.21.35"
 whitenoise = "^6.0.0"
 PyYAML = "^6.0"
-gunicorn = {version = "20.0.4", optional = true}
 django-iam-dbauth = "^0.1.4"
 elasticsearch = ">=7.0.0,<7.14"
 elasticsearch-dsl = ">=7.0.0,<8"
@@ -39,6 +38,7 @@ httpx = "^0.22.0"
 wagtail-orderable = "^1.1.0"
 requests-aws4auth = "^1.1.2"
 dj-database-url = "^1.2.0"
+gunicorn = "^20.1.0"
 
 [tool.poetry.dev-dependencies]
 ipython = ">=8.3.0"
@@ -55,4 +55,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.extras]
-prod = ["gunicorn", "psycopg2", "sentry-sdk", "cryptography"]
+prod = ["psycopg2", "sentry-sdk", "cryptography"]
